@@ -1,0 +1,11 @@
+# 1016 Breadboard Power Supply
+# .gitignore file
+
+# If files are added to .gitignore, to remove them out of the repository, use Powershell:
+# git ls-files -i -c --exclude-from=.gitignore | %{git rm --cached $_}
+
+# Exclude any directory in the tree labeled .private or Extras
+**/.private/
+**/.obsidian/
+**/Extras/
+**/KiCAD Project*/*-backups/

@@ -1,0 +1,92 @@
+(version 1)
+
+# Clearance Requirements for ES3 MainsL to other Nets
+	# MainsL-MainsN needs IPC2221B/B4
+(rule "MainsL-MainsN"
+	(severity error)
+	(condition "A.NetClass=='MainsL' && B.NetClass=='MainsN'")
+	(constraint clearance (min 100mil)))
+	# MainsL-Drain needs IPC2221B/B4
+(rule "MainsL-Drain"
+	(severity error)
+	(condition "A.NetClass=='MainsL' && B.NetClass=='Drain'")
+	(constraint clearance (min 100mil)))
+	# MainsL-Bias needs IPC2221B/B4
+(rule "MainsL-Bias"
+	(severity error)
+	(condition "A.NetClass=='MainsL' && B.NetClass=='Bias'")
+	(constraint clearance (min 200mil)))
+	# MainsL-Output needs UL62368-1 Reinforced
+(rule "MainsL-Output"
+	(severity error)
+	(condition "A.NetClass=='MainsL' && B.NetClass=='Output'")
+	(constraint clearance (min 150mil)))
+
+# Clearance Requirements for ES3 MainsN to other Nets
+	# MainsN-Drain needs IPC2221B/B4
+(rule "MainsN-Drain"
+	(severity error)
+	(condition "A.NetClass=='MainsN' && B.NetClass=='Drain'")
+	(constraint clearance (min 200mil)))
+	# MainsN-Bias needs IPC2221B/B4
+(rule "MainsN-Bias"
+	(severity error)
+	(condition "A.NetClass=='MainsN' && B.NetClass=='Bias'")
+	(constraint clearance (min 100mil)))
+	# MainsN-Output needs UL62368-1 Reinforced
+(rule "MainsN-Output"
+	(severity error)
+	(condition "A.NetClass=='MainsN' && B.NetClass=='Output'")
+	(constraint clearance (min 150mil)))
+
+# Clearance Requirements for ES3 Drain to other Nets
+	# Drain-Bias needs IPC2221B/B4
+(rule "Drain-Bias"
+	(severity error)
+	(condition "A.NetClass=='Drain' && B.NetClass=='Bias'")
+	(constraint clearance (min 200mil)))
+	# Drain-Output needs UL62368-1 Reinforced
+(rule "Drain-Output"
+	(severity error)
+	(condition "A.NetClass=='Drain' && B.NetClass=='Output'")
+	(constraint clearance (min 150mil)))
+
+# Clearance Requirements for ES3 Bias to other Nets
+	# Bias-Output needs UL62368-1 Reinforced
+(rule "Bias-Output"
+	(severity error)
+	(condition "A.NetClass=='Bias' && B.NetClass=='Output'")
+	(constraint clearance (min 150mil)))
+
+# UL 62368-1 Creepage requirements, generate warning message instead of error so we can tell the difference
+(rule "MainsL-Output-Creep"
+	(severity warning)
+	(condition "A.NetClass=='MainsL' && B.NetClass=='Output'")
+	(constraint clearance (min 260mil)))
+(rule "MainsN-Output-Creep"
+	(severity warning)
+	(condition "A.NetClass=='MainsN' && B.NetClass=='Output'")
+	(constraint clearance (min 260mil)))
+(rule "Dischg-Output-Creep"
+	(severity warning)
+	(condition "A.NetClass=='DischgRes' && B.NetClass=='Output'")
+	(constraint clearance (min 260mil)))
+(rule "Drain-Output-Creep"
+	(severity warning)
+	(condition "A.NetClass=='Drain' && B.NetClass=='Output'")
+	(constraint clearance (min 320mil)))
+(rule "Bias-Output-Creep"
+	(severity warning)
+	(condition "A.NetClass=='Bias' && B.NetClass=='Output'")
+	(constraint clearance (min 260mil)))
+(rule "Snubber-Output-Creep"
+	(severity warning)
+	(condition "A.NetClass=='Snubber' && B.NetClass=='Output'")
+	(constraint clearance (min 320mil)))
+
+
+# Prevent silk over tented vias
+(rule silk_over_via
+	(severity warning)
+	(constraint silk_clearance (min 0.2mm))
+	(condition "A.Type == '*Text' && B.Type == 'Via'"))
