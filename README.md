@@ -25,6 +25,8 @@ The other LED (red) lights if the capacitor voltage is above 30V.  This LED will
 
 ![](img/Schematic.png)
 
+![](img/PCB-Layers.png)
+
 ## Instructions for Use
 
 Attach two test leads to the 4mm jacks on the end of the unit.  The unit does not have a polarity restriction, and can discharge capacitors in both orientations.  It is recommended that your test leads are of a type that are rated for at least the working voltage of the capacitor you intend to discharge.  If the voltage is greater than 50V, it is recommended to use high voltage test leads with a category rating of at least CAT I / 600V.
@@ -37,7 +39,7 @@ Keep the test leads connected to the capacitor until the >30V LED light extingui
 
 ## Assembly
 
-Gerber files are available in the [1024 Capacitor Discharger](KiCAD%20Project%20-%20Discharger/Fabrication%20Exports/1024%20Capacitor%20Discharger.zip) folder.  You can order the PCB directly from Oshpark using [this](https://oshpark.com/import?url=https://github.com/wilsondr9999/1024-Capacitor-Discharger/blob/main/KiCAD%20Project%20-%20Discharger/Fabrication%20Exports/1024%20Capacitor%20Discharger.zip) link.
+Gerber files are available in the [1024 Capacitor Discharger](KiCAD%20Project%20-%20Discharger/Fabrication%20Exports/1024%20Capacitor%20Discharger.zip) folder.  You can order the PCB directly from Oshpark using [this](https://oshpark.com/import?url=https://github.com/wilsondr9999/1024-Capacitor-Discharger/blob/main/1024_Capacitor_Discharger.zip) link.
 
 All parts needed are listed in the [BOM](KiCAD%20Project%20-%20Discharger/BOM/BOM%201024%20Capacitor%20Discharger.csv) CSV file.
 
@@ -80,8 +82,6 @@ The Mica insulator sheet may be slightly too large to fit inside the aluminum he
 Use the [CaseBottom](FreeCAD%20Project/1024%20Capacitor%20Discharger%20Case/CaseBottom.stl) and [CaseTop](FreeCAD%20Project/1024%20Capacitor%20Discharger%20Case/CaseTop.stl) files to print the case, using the same settings as the solder stencil jig.  Use a soldering iron to insert 4 Heat-Set Inserts into the case top.  The Heat-Set Inserts should be an M3 x 6mm size.  The screws used to assembly the case should be an M3x12 with a hex cap head.
 
 Assemble the case halves together with the PCB inside, and insert the 4 hex cap M3x12 screws and tighten.
-
-![](img/AssembledCase.jpg)
 
 ## License
 
