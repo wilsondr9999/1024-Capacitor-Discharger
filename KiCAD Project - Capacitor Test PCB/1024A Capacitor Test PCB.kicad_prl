@@ -80,18 +80,6 @@
   "project": {
     "files": [
       {
-        "name": "1024A Capacitor Test PCB.kicad_sch",
-        "open": false,
-        "window": {
-          "display": 0,
-          "maximized": true,
-          "pos_x": -8,
-          "pos_y": -8,
-          "size_x": 2576,
-          "size_y": 1408
-        }
-      },
-      {
         "name": "1024A Capacitor Test PCB.kicad_pcb",
         "open": false,
         "window": {
